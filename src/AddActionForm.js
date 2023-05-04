@@ -1,7 +1,7 @@
 import { Button, Grid, TextField, Divider } from "@mui/material";
 import React, { useState } from "react";
 import ActionTypeInput from "./inputs/ActionTypeInput";
-import "./App.css";
+import "./styles/App.css";
 
 export default function AddActionForm({ isValidateNewAction, submitHandler }) {
   const [actionName, setActionName] = useState("");
@@ -11,20 +11,20 @@ export default function AddActionForm({ isValidateNewAction, submitHandler }) {
 
   const typeChangeHandler = (e) => {
     setActionType(e.target.value);
-    const isVaild = isValidateNewAction(actionName, actionType);
+    const isVaild = isValidateNewAction(actionName);
     setValidInput(isVaild);
   };
 
   const nameChangeHandler = (e) => {
     setActionName(e.target.value);
-    const isVaild = isValidateNewAction(actionName, actionType);
+    const isVaild = isValidateNewAction(actionName);
     setValidInput(isVaild);
   };
 
   // when a user submits a new action, first check its vailidity in terms of
   // name&tupe uniqueness, if it is valid, then submit, otherwise, display helper text
   const addNewAction = () => {
-    const isVaild = isValidateNewAction(actionName, actionType);
+    const isVaild = isValidateNewAction(actionName);
     setValidInput(isVaild);
     if (isVaild) {
       const newActionObj = { "name": actionName, "type": actionType };
@@ -51,9 +51,7 @@ export default function AddActionForm({ isValidateNewAction, submitHandler }) {
             value={actionName}
             onChange={nameChangeHandler}
             helperText={
-              !validInput
-                ? "Already exists an action with such name and type!"
-                : null
+              !validInput ? "Already exists an action with this name!" : null
             }
           />
         </Grid>

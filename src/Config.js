@@ -33,11 +33,11 @@ export default function Config({ name, version, actions }) {
   };
 
   const containsDuplicate = () => {
-    let nameAndTypeArr = currentActions.map((item) => {
-      return JSON.stringify({ "name": item.name, "type": item.type });
+    let nameArr = currentActions.map((item) => {
+      return item.name;
     });
-    let containDuplicate = nameAndTypeArr.some((item, idx) => {
-      return nameAndTypeArr.indexOf(item) !== idx;
+    let containDuplicate = nameArr.some((item, idx) => {
+      return nameArr.indexOf(item) !== idx;
     });
     return containDuplicate;
   };
@@ -62,10 +62,8 @@ export default function Config({ name, version, actions }) {
     );
   };
 
-  const isValidateNewAction = (newActionName, newActionType) => {
-    const res = currentActions.filter(
-      (item) => item.name === newActionName && item.type === newActionType
-    );
+  const isValidateNewAction = (newActionName) => {
+    const res = currentActions.filter((item) => item.name === newActionName);
     if (res.length <= 0) {
       return true;
     }
@@ -101,6 +99,7 @@ export default function Config({ name, version, actions }) {
           >
             {currentActions.map((action) => (
               <ActionView
+                key={`${action.name}+${action.type}`}
                 name={action.name}
                 type={action.type}
                 instruction={action.instruction ? action.instruction : null}
@@ -132,7 +131,12 @@ export default function Config({ name, version, actions }) {
               </Button>
             </Grid>
             <Grid ml={3}>
-              <Button onClick={confirmHandler} size="small" variant="contained">
+              <Button
+                onClick={confirmHandler}
+                size="small"
+                variant="contained"
+                disabled={duplicateIndex !== -1}
+              >
                 Confirm Changes
               </Button>
             </Grid>
@@ -159,7 +163,7 @@ export default function Config({ name, version, actions }) {
                 deleteAction={deleteAction}
                 warning={
                   index === duplicateIndex
-                    ? "actions of the same type cannot have the same name"
+                    ? "two actions cannot have the same name"
                     : ""
                 }
               ></Action>
