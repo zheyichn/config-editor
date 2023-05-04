@@ -44,7 +44,7 @@ export default function AddActionForm({ isValidateNewAction, submitHandler }) {
         <Grid item xs={12}>
           <h3>Add New Action</h3>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6} mb={2}>
           <TextField
             required
             label="actionName"
@@ -55,7 +55,7 @@ export default function AddActionForm({ isValidateNewAction, submitHandler }) {
             }
           />
         </Grid>
-        <Grid item xs={6} p={0}>
+        <Grid item xs={12} md={6} p={0}>
           <ActionTypeInput
             handleChange={typeChangeHandler}
             type={actionType}

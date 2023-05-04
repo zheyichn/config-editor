@@ -43,13 +43,13 @@ function App() {
 
   return (
     <>
-      <Grid container width="70%" margin={(10, 10)} className="body">
-        <Grid item>
+      <Grid container width="70%" margin={(10, 8)} className="body">
+        <Grid item alignSelf="flex-end" mb={2}>
           <Button
             style={{
               position: "absolute",
               right: "30%",
-              top: 100,
+              top: 40,
             }}
             color="success"
             variant="contained"
