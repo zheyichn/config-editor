@@ -13,11 +13,11 @@ export default function ActionView({ name, type, instruction }) {
       <Grid item xs={12}>
         <h3>Action</h3>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={12} sm={6}>
         <div className="action-property">actionName</div>
         <div className="action-value">{name}</div>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={12} sm={6}>
         <div className="action-property">actionType</div>
         <div className="action-value">{type}</div>
       </Grid>

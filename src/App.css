@@ -74,3 +74,50 @@
   background-color: #f9f9f9;
 }
 
+.button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #0062cc;
+}
+
+.button:active {
+  background-color: #005cbf;
+}
+
+.button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-container {
+  background-color: #F5F5F5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+body {
+  background-color: #F0F5FF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
