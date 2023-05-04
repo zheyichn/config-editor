@@ -35,3 +35,7 @@ In the project directory:
 
 - There's a green button `Export Config` at the upper right corner of the page, click it and open the console, you can then examine the output.
 - Note that refresh the page will cause changes to be lost as we do not have a backend yet, current user changes are temporarily stored in localStorage. Make sure you do not refresh the page before you export the edited config.
+
+## Input & Output
+- The input (i.e. config object) is a const hard coded in `App.js`, and passed down to component `Config.js`.
+- The output goes to console and exporting is triggered by a Button located in `App.js`.
