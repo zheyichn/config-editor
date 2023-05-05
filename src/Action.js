@@ -16,10 +16,12 @@ export default function Action({
 
   useEffect(() => {
     updateActionName(index, actionName);
+    // eslint-disable-next-line
   }, [actionName]);
 
   useEffect(() => {
     updateActionInstruction(index, actionInstruction);
+    // eslint-disable-next-line
   }, [actionInstruction]);
 
   return (

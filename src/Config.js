@@ -1,4 +1,4 @@
-import { Typography, List, Button, Grid, Divider } from "@mui/material";
+import { Typography, List, Button, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Action from "./Action";
 import ActionView from "./ActionView";
@@ -6,7 +6,7 @@ import AddActionForm from "./AddActionForm";
 
 export default function Config({ name, version, actions }) {
   const [currentActions, setCurrentActions] = useState(actions);
-  const [duplicateIndex, setDuplidateIndex] = useState(-1);
+  const [duplicateIndex, setDuplicateIndex] = useState(-1);
   const [editMode, setEditMode] = useState(false);
 
   useEffect(() => {
@@ -18,10 +18,10 @@ export default function Config({ name, version, actions }) {
     updatedActions[index].name = actionNewName;
     setCurrentActions(updatedActions);
     if (containsDuplicate()) {
-      setDuplidateIndex(index);
+      setDuplicateIndex(index);
     } else {
       if (duplicateIndex !== -1) {
-        setDuplidateIndex(-1);
+        setDuplicateIndex(-1);
       }
     }
   };

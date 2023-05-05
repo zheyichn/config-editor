@@ -1,4 +1,4 @@
-import { Button, Grid, TextField, Divider } from "@mui/material";
+import { Button, Grid, TextField } from "@mui/material";
 import React, { useState } from "react";
 import ActionTypeInput from "./inputs/ActionTypeInput";
 import "./styles/App.css";
